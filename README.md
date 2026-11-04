@@ -4,4 +4,4 @@ Daily task scheduler: assign daily / weekly / alternate-day tasks, track Complet
 
 Installable web app (PWA). Open the live page and use "Install app".
 
-Live: https://careerpaathshalagid-hash.github.io/careerpathshala-tasks/
+Live: https://careerpaathshalagid-hash.github.io/Employee-Task-Report-/

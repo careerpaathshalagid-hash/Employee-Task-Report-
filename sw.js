@@ -1,9 +1,11 @@
-const CACHE = 'cp-panel-v1';
+const CACHE = 'cp-panel-v2';
 const ASSETS = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
   'icons/maskable-192.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png', 'icons/favicon-16.png'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE)
+    .then(c => Promise.allSettled(ASSETS.map(a => c.add(a))))
+    .then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
